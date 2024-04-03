@@ -9,10 +9,11 @@
     "yarn": "4.1.1"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "node scripts/genParsers.js && tsc"
   },
   "devDependencies": {
     "@sapphire/ts-config": "^5.0.1",
+    "peggy": "^4.0.2",
     "typescript": "^5.4.3"
   },
   "packageManager": "yarn@4.1.1"
