@@ -1,7 +1,7 @@
 {
   "name": "nodenest",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "type": "module",
   "volta": {
@@ -9,12 +9,17 @@
     "yarn": "4.1.1"
   },
   "scripts": {
-    "build": "node scripts/genParsers.js && tsc"
+    "build": "tsc",
+    "build:genParsers": "node scripts/genParsers.js",
+    "test": "vitest"
   },
   "devDependencies": {
     "@sapphire/ts-config": "^5.0.1",
+    "@types/node": "^20.12.3",
     "peggy": "^4.0.2",
-    "typescript": "^5.4.3"
+    "ts-pegjs": "^4.2.1",
+    "typescript": "^5.4.3",
+    "vitest": "^1.4.0"
   },
   "packageManager": "yarn@4.1.1"
 }
