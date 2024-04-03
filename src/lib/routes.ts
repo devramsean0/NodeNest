@@ -18,7 +18,6 @@ export class Routes {
      * Loads the file, handles newlines and uses the pegjs parser
      */
     private async loadRoutes() {
-        console.log(this.routeDirectory);
         const file = await readFile(this.routeDirectory);
         const lines = file.toString().split(/\r?\n/); // Adjusted split regex to handle both \n and \r\n
         lines.forEach((val) => {
