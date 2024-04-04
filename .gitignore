@@ -4,8 +4,6 @@
 node_modules/
 dist/
 
-# Test code files
-config/
 
 # Yarn files
 .yarn/install-state.gz

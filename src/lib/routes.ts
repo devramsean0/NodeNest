@@ -43,7 +43,7 @@ export class Routes {
     }
 }
 
-interface IRoute {
+export interface IRoute {
     method: "get" | "post" | "patch" | "put" | "delete";
     path: string;
     controller: string;
