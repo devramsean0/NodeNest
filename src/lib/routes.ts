@@ -6,7 +6,7 @@ import { parse } from "../parser-files/routes.parser.js";
  */
 export class Routes {
     private routeDirectory = `${process.cwd()}/config/routes.def`;
-    readonly routes: IRoute[] = [];
+    readonly routes: IRouteDef[] = [];
     /**
      * Starts the route loading process
      * @since 1.0.0
@@ -37,7 +37,7 @@ export class Routes {
      * @since 1.0.0
      */
     private parseLineResponse(parsedLine: any[]) {
-        const route: IRoute = {
+        const route: IRouteDef = {
             method: parsedLine[0],
             path: parsedLine[1][1].join("").replaceAll(",", ""),
             controller: parsedLine[1][5].join("").replaceAll(",", ""),
@@ -47,7 +47,7 @@ export class Routes {
     }
 }
 
-export interface IRoute {
+export interface IRouteDef {
     method: "get" | "post" | "patch" | "put" | "delete";
     path: string;
     controller: string;
