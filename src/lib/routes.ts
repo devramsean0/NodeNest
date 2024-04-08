@@ -2,12 +2,14 @@ import { readFile } from "fs/promises";
 import { parse } from "../parser-files/routes.parser.js";
 /**
  * The route parsing code. This Initalizes and takes the route defs from `config/routes.def` and splits them into a usable format
+ * @since initial
  */
 export class Routes {
     private routeDirectory = `${process.cwd()}/config/routes.def`;
     readonly routes: IRoute[] = [];
     /**
      * Starts the route loading process
+     * @since 1.0.0
      */
     public async init() {
         await this.loadRoutes().then(() => {
@@ -16,6 +18,7 @@ export class Routes {
     }
     /**
      * Loads the file, handles newlines and uses the pegjs parser
+     * @since 1.0.0
      */
     private async loadRoutes() {
         const file = await readFile(this.routeDirectory);
@@ -31,6 +34,7 @@ export class Routes {
     /**
      * Takes the parser response and then adds the human readable value to the routes list
      * @param parsedLine {any[]} The Raw response from the parser
+     * @since 1.0.0
      */
     private parseLineResponse(parsedLine: any[]) {
         const route: IRoute = {

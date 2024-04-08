@@ -1,0 +1,9 @@
+.git
+docs/
+.devcontainer/
+.github/
+.yarn/
+docs/
+scripts/
+src/
+test/
